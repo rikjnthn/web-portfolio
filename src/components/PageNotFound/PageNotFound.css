@@ -1,0 +1,6 @@
+
+@keyframes bouncing {
+  to {
+    translate: 0 -7rem;
+  }
+}

@@ -1,0 +1,11 @@
+.icon-contact:hover svg {
+  animation: icon-float 1s ease infinite alternate;
+}
+
+@keyframes icon-float {
+  to {
+
+    translate: 0 -15px;
+  }
+}
+

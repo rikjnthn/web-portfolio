@@ -1,38 +1,66 @@
-.App {
-  text-align: center;
+html {
+  scroll-behavior: smooth;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.hamburger {
+  width: 40px; 
+  height: 25px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.hamburger span {
+  --hamburger-transition-timw : 200ms;
+  width: 35px;
+  height: 2px;
+  background-color: #fff;
+  transform-origin: left;
+  border-radius: 3px;
+  transition: transform var(--hamburger-transition-timw), translate var(--hamburger-transition-timw), opacity var(--hamburger-transition-timw);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.open span:first-child {
+  transform: rotateZ(45deg);
+  translate: 0 -2px;
+}
+.open span:nth-child(2) {
+  opacity: 0;
+}
+.open span:nth-child(3) {
+  transform: rotateZ(-45deg);
+}
+
+.navbar {
+  width: 10rem;
+  border-radius: 10px;
+  padding: 1rem;
+  position: absolute;
+  flex-direction: column;
+  align-items: flex-start;
+  translate: -4em 3.5em;
+  background-color: #2a2a2a;
+}
+
+@media screen and (max-width:490px) {
+  .navbar {
+    width: 100%;
+    border-radius: 0;
+    translate: 0;
+    left: 0; top: 6rem;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+.opacity-animation {
+  animation: load 3s ease 1 alternate;
+}
+
+@keyframes load {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
