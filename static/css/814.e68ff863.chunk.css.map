@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/814.e68ff863.chunk.css","mappings":"AACA,4BACE,GACE,iBACF,CACF,CAJA,oBACE,GACE,iBACF,CACF","sources":["components/PageNotFound/PageNotFound.css"],"sourcesContent":["\r\n@keyframes bouncing {\r\n  to {\r\n    translate: 0 -7rem;\r\n  }\r\n}"],"names":[],"sourceRoot":""}
