@@ -9,7 +9,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 
-import Sea from "../../assets/sea.jpg";
+import Sea from "../../assets/sea.webp";
 
 const Portfolio = () => {
   const ImageProps = ({

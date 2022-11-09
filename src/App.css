@@ -3,7 +3,7 @@ html {
 }
 
 .hamburger {
-  width: 40px; 
+  width: 40px;
   height: 25px;
   display: flex;
   flex-direction: column;
@@ -12,13 +12,14 @@ html {
 }
 
 .hamburger span {
-  --hamburger-transition-timw : 200ms;
+  --transition-duration: 200ms;
   width: 35px;
   height: 2px;
   background-color: #fff;
   transform-origin: left;
   border-radius: 3px;
-  transition: transform var(--hamburger-transition-timw), translate var(--hamburger-transition-timw), opacity var(--hamburger-transition-timw);
+  transition: transform var(--transition-duration),
+    translate var(--transition-duration), opacity var(--transition-duration);
 }
 
 .open span:first-child {
@@ -43,12 +44,13 @@ html {
   background-color: #2a2a2a;
 }
 
-@media screen and (max-width:490px) {
+@media screen and (max-width: 490px) {
   .navbar {
     width: 100%;
     border-radius: 0;
     translate: 0;
-    left: 0; top: 6rem;
+    left: 0;
+    top: 6rem;
   }
 }
 
