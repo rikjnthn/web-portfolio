@@ -44,9 +44,9 @@ const About = () => {
   const handleClick = () => contactRef.current?.scrollIntoView();
 
   return (
-    <section className="opacity-animation">
+    <main className="opacity-animation">
       <Flex
-        as="main"
+      as='section'
         maxWidth="full"
         height="calc(100vh - 6rem)"
         alignItems="center"
@@ -106,7 +106,7 @@ const About = () => {
           </Flex>
         </Flex>
       </Container>
-    </section>
+    </main>
   );
 };
 

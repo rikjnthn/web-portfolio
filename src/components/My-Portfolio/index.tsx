@@ -31,7 +31,7 @@ const Portfolio = () => {
   const handleClick = () => portfolioRef.current?.scrollIntoView()
 
   return (
-    <section className="opacity-animation">
+    <main className="opacity-animation">
       <Container as="section" maxWidth="full">
         <Flex
           as="section"
@@ -56,12 +56,12 @@ const Portfolio = () => {
           <Button onClick={handleClick} backgroundColor='cyan.900' color='white' _hover={{backgroundColor:'blue.600'}} _active={{backgroundColor: "blue.900"}}>See My Portfolio</Button>
         </Flex>
 
-        <Container as="main" ref={portfolioRef}>
+        <Container as="section" ref={portfolioRef}>
           <Container as="section" color='white'>
           </Container>
         </Container>
       </Container>
-    </section>
+    </main>
   );
 };
 

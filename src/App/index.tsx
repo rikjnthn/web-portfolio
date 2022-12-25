@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import { ChakraProvider } from "@chakra-ui/react";
 
 import { Navigation, About, Portfolio, PageNotFound } from "../components";
@@ -12,7 +12,7 @@ const App = () => {
   return (
     <ChakraProvider theme={customTheme}>
       <Suspense fallback={<Loading />}>
-        <BrowserRouter basename="web-portfolio">
+        <Router>
           <Routes>
             <Route path="/" element={<Navigation />}>
               <Route path="/" element={<Portfolio />} />
@@ -20,7 +20,7 @@ const App = () => {
               <Route path="*" element={<PageNotFound />} />
             </Route>
           </Routes>
-        </BrowserRouter>
+        </Router>
       </Suspense>
     </ChakraProvider>
   );
