@@ -49,7 +49,7 @@ const Navigation = () => {
   return (
     <>
       <Flex
-        as='nav'
+        as="nav"
         height="24"
         alignItems="center"
         backgroundColor="customBlack"
@@ -77,7 +77,7 @@ const Navigation = () => {
             </button>
           )}
           <Flex
-            as='section'
+            as="section"
             display={`${isSmallerThan780 ? (clicked ? "" : "none") : "flex"}`}
             justifyContent="space-evenly"
             fontSize="sm"

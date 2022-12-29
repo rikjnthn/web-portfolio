@@ -2,10 +2,21 @@ import React from "react";
 
 import { Container, Flex, Spinner } from "@chakra-ui/react";
 
+import { cssSupport } from "../../helper/css-support";
+
 const Loading = () => {
   return (
     <>
-      <Flex alignItems="center" justifyContent="center" height="100vh" backgroundColor='blackAlpha.900'>
+      <Flex
+        alignItems="center"
+        justifyContent="center"
+        backgroundColor="blackAlpha.900"
+        height={
+          cssSupport("height", "1dvh")
+            ? "calc(100dvh - 6rem)"
+            : "calc(100vh - 6rem)"
+        }
+      >
         <Container maxWidth="fit-content" display="flex">
           <Spinner
             width="5rem"

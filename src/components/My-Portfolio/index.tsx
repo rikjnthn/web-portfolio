@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React, { useRef } from "react";
 
 import {
   Container,
@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 
 import Sea from "../../assets/sea.webp";
+import { cssSupport } from "../../helper/css-support";
 
 const Portfolio = () => {
   const ImageProps = ({
@@ -26,9 +27,9 @@ const Portfolio = () => {
     </Link>
   );
 
-  const portfolioRef = useRef<HTMLDivElement>(null)
+  const portfolioRef = useRef<HTMLDivElement>(null);
 
-  const handleClick = () => portfolioRef.current?.scrollIntoView()
+  const handleClick = () => portfolioRef.current?.scrollIntoView();
 
   return (
     <main className="opacity-animation">
@@ -36,10 +37,14 @@ const Portfolio = () => {
         <Flex
           as="section"
           flexDirection="column"
-          height="calc(100vh - 6rem)"
+          height={
+            cssSupport("height", "1dvh")
+              ? "calc(100dvh - 6rem)"
+              : "calc(100vh - 6rem)"
+          }
           alignItems="center"
           justifyContent="center"
-          gap='20'
+          gap="20"
           backgroundImage={Sea}
           backgroundClip="text"
         >
@@ -53,12 +58,27 @@ const Portfolio = () => {
             Portfolio
           </Heading>
 
-          <Button onClick={handleClick} backgroundColor='cyan.900' color='white' _hover={{backgroundColor:'blue.600'}} _active={{backgroundColor: "blue.900"}}>See My Portfolio</Button>
+          <Button
+            onClick={handleClick}
+            backgroundColor="cyan.900"
+            color="white"
+            _hover={{ backgroundColor: "blue.600" }}
+            _active={{ backgroundColor: "blue.900" }}
+          >
+            See My Portfolio
+          </Button>
         </Flex>
 
-        <Container as="section" ref={portfolioRef}>
-          <Container as="section" color='white'>
-          </Container>
+        <Container
+          as="section"
+          ref={portfolioRef}
+          height={
+            cssSupport("height", "1dvh")
+              ? "calc(100dvh - 6rem)"
+              : "calc(100vh - 6rem)"
+          }
+        >
+          <Container as="section" color="white"></Container>
         </Container>
       </Container>
     </main>

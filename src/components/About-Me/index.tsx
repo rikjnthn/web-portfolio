@@ -14,6 +14,7 @@ import { BsWhatsapp } from "react-icons/bs";
 import { SiGmail } from "react-icons/si";
 import { IconType } from "react-icons/lib";
 
+import { cssSupport } from "../../helper/css-support";
 import "./about.css";
 import Greet from "../../assets/greet.png";
 
@@ -46,9 +47,12 @@ const About = () => {
   return (
     <main className="opacity-animation">
       <Flex
-      as='section'
-        maxWidth="full"
-        height="calc(100vh - 6rem)"
+        as="section"
+        height={
+          cssSupport("height", "1dvh")
+            ? "calc(100dvh - 6rem)"
+            : "calc(100vh - 6rem)"
+        }
         alignItems="center"
         color="white"
         flexWrap="wrap"
@@ -70,19 +74,24 @@ const About = () => {
             Contact Me
           </Button>
         </Container>
-        <Container className="hero-image" height='fit-content' borderRadius='3xl' overflow='hidden'> 
-          <Image
-            src={Greet}
-            alt="my-photo"
-          />
+        <Container
+          className="hero-image"
+          height="fit-content"
+          borderRadius="3xl"
+          overflow="hidden"
+        >
+          <Image src={Greet} alt="my-photo" />
         </Container>
       </Flex>
       <Container
         ref={contactRef}
         as="section"
-        maxWidth="full"
         color="white"
-        height="calc(100vh - 7rem)"
+        height={
+          cssSupport("height", "1dvh")
+            ? "calc(100dvh - 6rem)"
+            : "calc(100vh - 6rem)"
+        }
       >
         <Flex alignItems="center" height="76%" flexFlow="column">
           <Heading fontSize={{ base: "4xl", sm: "6xl" }}>Contact Me</Heading>
